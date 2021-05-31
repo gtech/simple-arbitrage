@@ -8,8 +8,8 @@ import { get } from "https"
 import { getDefaultRelaySigningKey } from "./utils";
 
 const ETHEREUM_RPC_URL = process.env.ETHEREUM_RPC_URL || "http://127.0.0.1:8545"
-const PRIVATE_KEY = process.env.PRIVATE_KEY || ""
-const BUNDLE_EXECUTOR_ADDRESS = process.env.BUNDLE_EXECUTOR_ADDRESS || ""
+const PRIVATE_KEY = process.env.PRIVATE_KEY || "" //TODO make web3 code extract this key... or should we just put it into the encrypted file. I'm not sure it's necessary to have the keystore and veracrypt at the same time.
+const BUNDLE_EXECUTOR_ADDRESS = process.env.BUNDLE_EXECUTOR_ADDRESS || "";
 
 const FLASHBOTS_RELAY_SIGNING_KEY = process.env.FLASHBOTS_RELAY_SIGNING_KEY || getDefaultRelaySigningKey();
 

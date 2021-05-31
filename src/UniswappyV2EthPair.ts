@@ -51,7 +51,7 @@ export class UniswappyV2EthPair extends EthMarket {
     const marketPairs = new Array<UniswappyV2EthPair>()
     for (let i = 0; i < BATCH_COUNT_LIMIT * UNISWAP_BATCH_SIZE; i += UNISWAP_BATCH_SIZE) {
       const pairs: Array<Array<string>> = (await uniswapQuery.functions.getPairsByIndexRange(factoryAddress, i, i + UNISWAP_BATCH_SIZE))[0];
-      for (let i = 0; i < pairs.length; i++) {
+      for (let i = 0; i < pairs.length; i++) {//TODO is the use of i twice here a bug?
         const pair = pairs[i];
         const marketAddress = pair[2];
         let tokenAddress: string;
